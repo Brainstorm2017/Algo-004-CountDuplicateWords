@@ -19,6 +19,17 @@ public class SolutionTest {
                             "Hello (Seen 3)\n" +
                             "World (Seen 1)\n" +
                             "Java (Seen 2)";
+        for (i = 0; i < countUniqueWordsTest1.length; i++) {
+            if (!array[i]) {
+                count++;
+                for (j = i + 1; j < words.length; j++) {
+                    if (words[j].compareto(words[i])) == 0) {
+                        array[j] = true;
+                        count--;
+                    }
+                }
+            }
+        }
         String actual = solution.countUniqueWords(input);
         Assert.assertEquals(expected, actual);
     }
